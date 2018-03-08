@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class shutdownCountdown {
 	public static void main(String[] args) throws InterruptedException, IOException {
 		Scanner input = new Scanner(System.in);
-	    Runtime runtime = Runtime.getRuntime();
-	    LocalTime currentTime;
-	    String timeUntilShutdown;
+		Runtime runtime = Runtime.getRuntime();
+		LocalTime currentTime;
+	    	String timeUntilShutdown;
 		Scanner delim;
 		int hours;
 		int minutes;
@@ -19,7 +19,7 @@ public class shutdownCountdown {
 		System.out.println("Enter the amount of time until shutdown (formatted as 'Hours:Minutes').");
 		timeUntilShutdown = input.nextLine();
 		
-	    currentTime = LocalTime.now();
+	    	currentTime = LocalTime.now();
 		currentTime = currentTime.truncatedTo(ChronoUnit.MINUTES);
 		delim = new Scanner(timeUntilShutdown);
 		input.close();
@@ -40,7 +40,7 @@ public class shutdownCountdown {
 
 			if (minutes <= 0) {
 				System.out.println("Shutting down");
-			    runtime.exec("shutdown -s -t 0");
+				runtime.exec("shutdown -s -t 0");
 			}
 		}	
 	}
